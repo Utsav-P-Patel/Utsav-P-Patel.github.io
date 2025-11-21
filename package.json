@@ -6,7 +6,7 @@
   "scripts": {
     "install": "npm install",
     "dev": "vite dev --port 5000",
-    "build": "vite build",
+    "build": "rm -rf dist && vite build",
     "check": "tsc"
   },
   "notes": "removed framer motion dependency",
