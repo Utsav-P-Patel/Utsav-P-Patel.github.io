@@ -6,7 +6,9 @@
   "scripts": {
     "install": "npm install",
     "dev": "vite dev --port 5000",
-    "build": "rm -rf dist && vite build",
+    "prebuild": "rm -rf ../assets ../index.html dist",
+    "build": "vite build",
+    "postbuild": "cp -r dist/ ../",
     "check": "tsc"
   },
   "notes": "removed framer motion dependency",
