@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Download, Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Download, Github, Linkedin, Mail, Phone } from "lucide-react";
 import { ParticleBackground } from "@/components/ui/particle-background";
 
 export function Hero() {
@@ -8,7 +8,7 @@ export function Hero() {
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background/80 z-0" />
       <ParticleBackground />
-      
+
       {/* Radial gradient overlay for depth */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)] pointer-events-none" />
 
@@ -38,13 +38,13 @@ export function Hero() {
 
           {/* Tagline */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Crafting scalable <span className="text-white">REST APIs</span> and high-performance <span className="text-white">Microservices</span> for the modern web.
+            Architecting Scalable <span className="text-white">Microservices</span> & <span className="text-white">Cloud-Native</span> Solutions.
           </p>
 
           {/* Contact Info Grid - Highlighted */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-            <a 
-              href="mailto:utsavpatel00265@gmail.com" 
+            <a
+              href="mailto:utsavpatel00265@gmail.com"
               className="flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 hover:bg-accent/10 hover:border-accent/50 hover:text-accent transition-all duration-300 group backdrop-blur-sm"
             >
               <div className="p-2 rounded-full bg-white/5 group-hover:bg-accent/20 transition-colors">
@@ -52,9 +52,9 @@ export function Hero() {
               </div>
               <span className="text-sm md:text-base font-medium text-white/90 group-hover:text-white">utsavpatel00265@gmail.com</span>
             </a>
-            
-            <a 
-              href="tel:+918511725941" 
+
+            <a
+              href="tel:+918511725941"
               className="flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 hover:bg-accent/10 hover:border-accent/50 hover:text-accent transition-all duration-300 group backdrop-blur-sm"
             >
               <div className="p-2 rounded-full bg-white/5 group-hover:bg-accent/20 transition-colors">
@@ -65,14 +65,14 @@ export function Hero() {
           </div>
 
           {/* Actions */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
             className="flex flex-col md:flex-row items-center justify-center gap-4 pt-4"
           >
-            <a 
-              href="/resume.pdf" 
+            <a
+              href="/resume.pdf"
               download="Utsav_Patel_Resume.pdf"
               className="group relative px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-accent hover:text-black transition-all duration-300 flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(179,157,219,0.4)]"
             >
@@ -81,18 +81,18 @@ export function Hero() {
             </a>
 
             <div className="flex items-center gap-4">
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
+              <a
+                href="https://linkedin.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/20 hover:scale-110 hover:border-accent/50 transition-all duration-300 text-white group"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} className="group-hover:text-accent transition-colors" />
               </a>
-              <a 
-                href="https://github.com" 
-                target="_blank" 
+              <a
+                href="https://github.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/20 hover:scale-110 hover:border-accent/50 transition-all duration-300 text-white group"
                 aria-label="GitHub"
@@ -105,14 +105,16 @@ export function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground animate-bounce cursor-pointer hover:text-white transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer animate-bounce"
         onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
       >
-        <ArrowDown className="w-6 h-6" />
+        <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center pt-2">
+          <div className="w-1.5 h-3 bg-primary rounded-full animate-glow-pulse" />
+        </div>
       </motion.div>
     </section>
   );
