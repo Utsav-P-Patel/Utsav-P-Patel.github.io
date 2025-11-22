@@ -6,7 +6,7 @@ const skillCategories = [
   {
     title: "Programming Languages",
     icon: Terminal,
-    skills: ["Java", "JavaScript", "Python"]
+    skills: ["Java", "Python", "TypeScript", "JavaScript", "SQL", "HTML/CSS"]
   },
   {
     title: "Frameworks & Libraries",
@@ -16,17 +16,17 @@ const skillCategories = [
   {
     title: "Databases & Storage",
     icon: Database,
-    skills: ["DynamoDB", "RDS", "Firebase", "Redis"]
+    skills: ["PostgreSQL", "DynamoDB", "Redis", "Firebase", "MySQL", "MongoDB"]
   },
   {
     title: "Cloud & DevOps",
     icon: Cloud,
     skills: [
       { name: "AWS", details: "S3, EC2, CloudFront, Lambda, API Gateway, Terraform" },
-      "GCP", 
-      "Jenkins", 
-      "Docker", 
-      "GitHub", 
+      "GCP",
+      "Jenkins",
+      "Docker",
+      "GitHub",
       "RabbitMQ"
     ]
   }
@@ -36,7 +36,7 @@ export function Skills() {
   return (
     <section id="skills" className="py-24 px-4 relative">
       <div className="max-w-6xl mx-auto">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -67,8 +67,8 @@ export function Skills() {
                   {category.skills.map((skill, i) => {
                     if (typeof skill === "string") {
                       return (
-                        <span 
-                          key={skill} 
+                        <span
+                          key={skill}
                           className="px-3 py-1.5 rounded-md bg-white/5 border border-white/5 text-sm text-muted-foreground hover:text-white hover:border-white/20 transition-colors cursor-default"
                         >
                           {skill}
