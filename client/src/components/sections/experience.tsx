@@ -7,38 +7,43 @@ const experiences = [
     role: "Full Stack Engineer",
     period: "Jan 2025 – Jul 2025",
     desc: [
-      "Developed tax platform dashboards and payment modules on AWS Lambda, DynamoDB, and API Gateway.",
-      "Built productivity CLI tools and implemented CI/CD pipelines."
+      "Developed the homepage dashboard with real-time summary cards for key modules like File, Save, Advance Tax, Investments, and Connected Accounts.",
+      "Built the Pay module for advance/self-assessment tax payments with challan generation, timeline tracking, and smart payment insights.",
+      "Enhanced the File module with Foreign Income, Tax Paid Outside India, DTAA-based relief computation, and relief summary view.",
+      "Created a Node.js-based Excel-to-code generation tool to auto-generate TypeScript models and JSON schemas."
     ],
-    tech: ["AWS Lambda", "DynamoDB", "API Gateway", "Strapi", "Jenkins", "Node.js"]
+    tech: ["Serverless", "AWS Lambda", "AWS Step Functions", "DynamoDB", "API Gateway", "Strapi", "Jenkins", "Node.js"]
   },
   {
     company: "Emerging Five",
     role: "Software Engineer",
     period: "Jan 2024 – Dec 2024",
     desc: [
-      "Architected e-commerce microservices using Spring Boot and Redis.",
-      "Conducted performance testing for Kalupur Bank using AWS EC2 and Selenium."
+      "Developed a scalable microservices-based e-commerce platform using Spring Boot, Spring Cloud Gateway, and Redis for high performance and modularity.",
+      "Built an admin portal for the e-commerce backend to manage website content, approvals, vouchers, and discounts with secure role-based access control.",
+      "Performed large-scale performance testing for Kalupur Bank’s net banking portal using Python, Selenium, and AWS EC2, identifying and resolving system bottlenecks."
     ],
-    tech: ["Java", "Spring Boot", "Redis", "Spring Security", "Python", "Selenium", "AWS EC2"]
+    tech: ["Java", "Spring Boot", "Spring Cloud Gateway", "Netflix Eureka", "Redis", "Spring Security", "Python", "Selenium", "AWS EC2"]
   },
   {
     company: "Independent Freelance Engineer",
     role: "Freelance",
     period: "",
     desc: [
-      "Created CGM Preamble (glucose monitoring system) with Flask, AWS EC2, and D3.js visualizations."
+      "Developed CGM Preamble, a Flask-based patient dietary and glucose monitoring system with D3.js visualizations and automated PDF reporting.",
+      "Implemented OAuth for organizational email-based access control, integrated Tryvital APIs for secure glucose and dietary data aggregation, and deployed the solution on AWS EC2 for scalable performance."
     ],
-    tech: ["Flask", "D3.js", "AWS", "Python", "SQL"]
+    tech: ["Flask", "D3.js", "AWS", "Python", "OAuth", "SQL"]
   },
   {
     company: "Epitome Corp",
     role: "Software Developer",
     period: "Jan 2023 – Nov 2023",
     desc: [
-      "Built academic routine management app in Laravel with interactive UI."
+      "Developed a web-based academic routine management app using Laravel for administrators, teachers, and students with secure authentication and MySQL data handling.",
+      "Implemented interactive timetable views using DataTables for efficient schedule creation and management."
     ],
-    tech: ["Laravel", "PHP", "MySQL"]
+    tech: ["Laravel", "PHP", "MySQL", "DataTables"]
   }
 ];
 
@@ -46,7 +51,7 @@ export function Experience() {
   return (
     <section id="experience" className="py-24 px-4 relative">
       <div className="max-w-6xl mx-auto">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -58,7 +63,7 @@ export function Experience() {
 
         <div className="relative border-l border-white/10 ml-6 space-y-12">
           {experiences.map((exp, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -81,8 +86,8 @@ export function Experience() {
                     </span>
                   )}
                 </div>
-                
-                <ul className="space-y-2 list-disc list-inside text-muted-foreground mb-6">
+
+                <ul className="space-y-2 list-disc text-muted-foreground mb-6 ml-4">
                   {exp.desc.map((item, i) => (
                     <li key={i} className="leading-relaxed">{item}</li>
                   ))}
@@ -90,8 +95,8 @@ export function Experience() {
 
                 <div className="flex flex-wrap gap-2">
                   {exp.tech.map((t) => (
-                    <span 
-                      key={t} 
+                    <span
+                      key={t}
                       className="text-xs font-medium px-2.5 py-1 rounded-md bg-accent/5 text-accent/80 border border-accent/10"
                     >
                       {t}
