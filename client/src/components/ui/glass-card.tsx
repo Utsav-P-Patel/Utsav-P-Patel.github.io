@@ -6,9 +6,10 @@ interface GlassCardProps extends HTMLMotionProps<"div"> {
   children: ReactNode;
   className?: string;
   hoverEffect?: boolean;
+  link?: string;
 }
 
-export function GlassCard({ children, className, hoverEffect = false, ...props }: GlassCardProps) {
+export function GlassCard({ children, className, hoverEffect = false, link, ...props }: GlassCardProps) {
   return (
     <motion.div
       className={cn(
@@ -20,8 +21,14 @@ export function GlassCard({ children, className, hoverEffect = false, ...props }
     >
       {/* Subtle shine effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-      
-      {children}
+
+      {link ? (
+        <a href={link} target="_blank" rel="noopener noreferrer" className="block h-full">
+          {children}
+        </a>
+      ) : (
+        children
+      )}
     </motion.div>
   );
 }

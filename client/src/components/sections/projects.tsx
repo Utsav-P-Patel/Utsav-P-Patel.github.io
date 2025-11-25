@@ -45,10 +45,10 @@ export function Projects() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
             >
-              <GlassCard hoverEffect={true} className="h-full flex flex-col p-8 bg-white/5 border-white/5 group">
+              <GlassCard hoverEffect={true} link={project.link} className="h-full flex flex-col p-8 bg-white/5 border-white/5 group">
                 <div className="flex justify-between items-start mb-6">
                   <h3 className="text-2xl font-bold text-white group-hover:text-accent transition-colors">{project.title}</h3>
-                  <ArrowUpRight className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={20} />
+                  {project.link && <ArrowUpRight className="text-muted-foreground group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={20} />}
                 </div>
 
                 <p className="text-muted-foreground mb-8 grow leading-relaxed">
